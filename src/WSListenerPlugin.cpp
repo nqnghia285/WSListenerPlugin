@@ -203,7 +203,7 @@ void WSListenerPlugin::removeAll() { _events.clear(); }
  * @param payload const char *
  */
 void WSListenerPlugin::emit(AsyncWebSocketClient *client, const char *event, const char *payload) {
-   String msg = "[" + String(event) + "," + String(payload) + "]";
+   String msg = "[\"" + String(event) + "\",\"" + String(payload) + "\"]";
    client->text(msg.c_str());
 }
 
@@ -224,7 +224,7 @@ void WSListenerPlugin::emit(AsyncWebSocketClient *client, String event, String p
  * @param payload const char *
  */
 void WSListenerPlugin::emitAll(AsyncWebSocket *server, const char *event, const char *payload) {
-   String msg = "[" + String(event) + "," + String(payload) + "]";
+   String msg = "[\"" + String(event) + "\",\"" + String(payload) + "\"]";
    server->textAll(msg.c_str());
 }
 
