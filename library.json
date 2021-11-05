@@ -1,0 +1,24 @@
+{
+	"name": "WSListenerPlugin",
+	"version": "1.0.2",
+	"description": "A plugin supports configuring listeners in web server used websocket AsyncWebSocket",
+	"keywords": "plugin, wslistener, wslistenerplugin, WSListener, Plugin, WSListenerPlugin",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/nqnghia285/WSListenerPlugin.git"
+	},
+	"authors": [
+		{
+			"name": "Nghia Ngo Quang",
+			"email": "nqnghia285@gmail.com",
+			"url": "https://github.com/nqnghia285"
+		}
+	],
+	"license": "MIT",
+	"dependencies": {
+		"bblanchon/ArduinoJson": "~6.18.5",
+		"me-no-dev/ESP Async WebServer": "~1.2.3"
+	},
+	"frameworks": "*",
+	"platforms": "*"
+}
