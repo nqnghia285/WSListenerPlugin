@@ -55,6 +55,6 @@ class WSListenerPlugin {
    void emit(AsyncWebSocketClient *client, String event, String payload);
    void emitAll(AsyncWebSocket *server, const char *event, const char *payload);
    void emitAll(AsyncWebSocket *server, String event, String payload);
-}
+};
 
 #endif /* WSLISTENERPLUGIN_H_ */
