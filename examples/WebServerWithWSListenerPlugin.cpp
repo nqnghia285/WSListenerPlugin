@@ -8,6 +8,8 @@
 #include <ESP8266mDNS.h>
 #endif
 
+using namespace std::placeholders;
+
 #define WIFI_CONFIG_FILE_PATH "/wifi_config.txt"
 
 #define CSM "client-send-message"
@@ -129,8 +131,7 @@ void configServer() {
 
    // Begin server
    // ws.onEvent(onWsEvent);
-   ws.onEvent(std::bind(&WSListenerPlugin::onEvent, wslp, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4,
-                        std::placeholders::_5, std::placeholders::_6));
+   ws.onEvent(bind(&WSListenerPlugin::onEvent, wslp, _1, _2, _3, _4, _5, _6));
    server.addHandler(&ws);
 
    server.begin();
