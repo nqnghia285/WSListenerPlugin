@@ -14,14 +14,33 @@ A plugin supports configuring listeners in web server used websocket: [AsyncWebS
 
 ### Message format
 
-```
+```c++
    Message: ["event_name","payload"]
 ```
 
 #### Example:
 
+```c++
+   // A string is sent from client(websocket in browser)
+   String msg = "[\"control\",\"{\"led-01\":\"on\",\"led-02\":\"off\"}\"]";
 ```
-   String msg = "[\"data\",\"{\"sensor-type\":\"dht\",\"temp\":38,\"hum\":56}\"]";
+
+```c++
+   // Sends a event
+   WSListenerPlugin wslp;
+
+   ...// config something
+
+   void clientSendMessage(AsyncWebSocket *server, AsyncWebSocketClient *client, const char *payload) {
+      String eventName = "message";
+      String message = "Hello client!";
+
+      // Sends a event to a client
+      wslp.emit(client, eventName, message);
+
+      // Sends a event to all clients
+   wslp.emitAll(server, eventName, message);
+   }
 ```
 
 ### High Level Client API
