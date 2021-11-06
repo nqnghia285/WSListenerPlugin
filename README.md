@@ -12,6 +12,18 @@ A plugin supports configuring listeners in web server used websocket: [AsyncWebS
 -  ESPAsyncWebServer library (v1.2.3).
 -  ArduinoJson library (v6.18.5).
 
+### Message format
+
+```
+   Message: ["event_name","payload"]
+```
+
+#### Example:
+
+```
+   String msg = "[\"data\",\"{\"sensor-type\":\"dht\",\"temp\":38,\"hum\":56}\"]";
+```
+
 ### High Level Client API
 
 -  `onEvent`: Handles arrived events.

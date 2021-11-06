@@ -128,7 +128,9 @@ void configServer() {
    wslp.on(CSM, clientSendMessage);
 
    // Begin server
-   ws.onEvent(wslp.onEvent);
+   // ws.onEvent(onWsEvent);
+   ws.onEvent(std::bind(&WSListenerPlugin::onEvent, wslp, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4,
+                        std::placeholders::_5, std::placeholders::_6));
    server.addHandler(&ws);
 
    server.begin();

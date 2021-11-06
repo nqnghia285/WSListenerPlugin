@@ -1,8 +1,8 @@
 {
 	"name": "WSListenerPlugin",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A plugin supports configuring listeners in web server used websocket AsyncWebSocket",
-	"keywords": "plugin, wslistener, wslistenerplugin, WSListener, Plugin, WSListenerPlugin",
+	"keywords": "plugin, wslistener, wslistenerplugin",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/nqnghia285/WSListenerPlugin.git"
